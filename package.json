@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js"
+    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "comment1": "webpack-dev-server is like nodemon *** it will not create dist folder, it will do everything in memory ******",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -12,10 +14,13 @@
   "devDependencies": {
     "bootstrap": "^4.5.2",
     "css-loader": "^4.2.2",
+    "html-webpack-plugin": "^4.4.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^10.0.1",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.3"
   }
 }
