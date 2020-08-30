@@ -4,7 +4,19 @@ const {merge} = require('webpack-merge')
 module.exports = merge(common,{
   mode: 'development',
   output: {
-    filename: 'main.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
-  }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader', // 3. injects styles into DOM
+          'css-loader',   // 2. turns css into commonJS
+          'sass-loader'   // 1. turns scss into css
+        ],
+      }
+    ]
+  },
 })
